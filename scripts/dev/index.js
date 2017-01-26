@@ -1,5 +1,5 @@
 #!/usr/bin/env node_modules/.bin/babel-node
-import colors from "colors";
+import colors from 'colors';
 import exec from '../helpers/exec';
 
 console.log('');

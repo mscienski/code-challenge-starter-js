@@ -3,6 +3,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const host = process.env.host || 'localhost';
 const port = parseInt(process.env.port, 10) + 1;
 
@@ -16,18 +17,16 @@ try {
 }
 
 module.exports = {
-    devtool: 'cheap-inline-source-map',
+    devtool: 'source-map',
     context: path.resolve(__dirname, './src'),
     entry: {
         'app': [
-            'webpack-hot-middleware/client?reload=true&path=/__webpack_hmr&timeout=20000',
             path.join(__dirname, 'src/app.js')
         ]
     },
     output: {
-        path: path.resolve(__dirname, '/dist'),
-        filename: '[name].bundle.js',
-        chunkFilename: '[name]-[chunkhash].js',
+        path: path.resolve(__dirname, 'dist/'),
+        filename: '[name]-[hash].min.js',
         publicPath: '/'
     },
     module: {
@@ -68,9 +67,15 @@ module.exports = {
             filename: 'index.html'
         }),
         new FaviconsWebpackPlugin(path.join(__dirname, 'src/boris.png')),
-        new webpack.HotModuleReplacementPlugin(),
+        new ExtractTextWebpackPlugin('[name]-[hash].min.css'),
+        new webpack.optimize.UglifyJsPlugin({
+            compressor: {
+                warnings: false,
+                screw_ie8: true
+            }
+        }),
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('development')
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         }),
         new webpack.IgnorePlugin(/webpack-stats\.json$/)
     ]
