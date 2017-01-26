@@ -12,7 +12,8 @@ console.log('Building and running production server'.blue);
 const runCmds = [
     './scripts/lint/index.js',
     './scripts/test/index.js',
-    './scripts/build/index.js'
+    './scripts/build/index.js',
+    'node server'
 ];
 console.log(runCmds.join('; ').yellow);
 
