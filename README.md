@@ -19,6 +19,8 @@ Run commands from within vagrant after `vagrant ssh` inside the `/vagrant` direc
 
 ## Development server
 `npm run dev` will build the app with webpack and run a dev server on port 3000.
+Hot module reloading is enabled, so you should see your client refresh when you
+make a code change.
 When using Vagrant, the host port will be 8083.
 
 ## Production build/server
