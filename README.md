@@ -1,5 +1,5 @@
 # code-challenge-starter-js
-Starter pack for code challenges or short projects in JS
+Starter pack for code challenges or small projects in JS/ES-latest
 
 ## Windows
 Vagrantfile is provided for running on windows. This is because the syntax for
