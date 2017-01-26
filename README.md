@@ -12,10 +12,10 @@ flag breaks the node packages.
 Run commands from within vagrant after `vagrant ssh` inside the `/vagrant` directory.
 
 ## Lint
-`npm run lint` will run eslint
+`npm run lint` will run eslint.
 
 ## Tests
-`npm run test` will run Karma with eslint checks applied to the webpack build
+`npm run test` will run Karma with eslint checks applied to the webpack build.
 
 ## Development server
 `npm run dev` will build the app with webpack and run a dev server on port 3000.
