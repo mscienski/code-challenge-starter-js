@@ -1,0 +1,26 @@
+{
+  "extends": "eslint-config-airbnb",
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true,
+    "es6": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "arrow-body-style": 0, // don't require braces in arrow function bodies
+    "comma-dangle": ["error", "never"] // comma dangling is gross
+  },
+  "plugins": [
+    "import"
+  ],
+  "settings": {
+    "import/parser": "babel-eslint",
+    "import/resolve": {
+      "moduleDirectory": ["node_modules", "src"]
+    }
+  },
+  "globals": {
+    "sinon": true
+  }
+}
