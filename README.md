@@ -12,7 +12,7 @@ flag breaks the node packages.
 Run commands from within vagrant after `vagrant ssh` inside the `/vagrant` directory.
 
 ## Lint
-`npm run lin` will run eslint
+`npm run lint` will run eslint
 
 ## Tests
 `npm run test` will run Karma
