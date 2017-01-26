@@ -15,10 +15,7 @@ Run commands from within vagrant after `vagrant ssh` inside the `/vagrant` direc
 `npm run lin` will run eslint
 
 ## Tests
-`npm run test` will run Karma
-
-## Sanity
-`npm run sanity` will run eslint and Karma
+`npm run test` will run Karma with eslint checks applied to the webpack build
 
 ## Development server
 `npm run dev` will build the app with webpack and run a dev server on port 3000.

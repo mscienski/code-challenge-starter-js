@@ -9,7 +9,21 @@
   "parser": "babel-eslint",
   "rules": {
     "arrow-body-style": 0, // don't require braces in arrow function bodies
-    "comma-dangle": ["error", "never"] // comma dangling is gross
+    "arrow-parens": ["error", "as-needed", { "requireForBlockBody": false }], // no parens for arrow functions with arity 1
+    "comma-dangle": ["error", "never"], // comma dangling is gross
+    "import/extensions": 0, // webpack handles this
+    "import/no-extraneous-dependencies": 0, // errors on webpack resolve aliases for project files
+    "import/no-unresolved": 0, // this rule doesn't play nice with webpack
+    "import/prefer-default-export": 0, // only named exports are fine
+    "indent": [0, 4, { "SwitchCase": 1 }],
+    "max-len": 0, // sometimes long lines are okay
+    "no-case-declarations": 0, // it's okay to declare variables in case statements (const)
+    "no-console": 0, // keep console logs
+    "no-debugger": 0, // keep debugger statements
+    "no-prototype-builtins": 0, // {}.hasOwnProperty.call() is ugly
+    "no-underscore-dangle": 0, // for "private" methods
+    "no-unused-expressions": 0, // for chai expect assertions that are not function calls (.to.be.true)
+    "no-unused-vars": ["error", { "varsIgnorePattern": "colors" }] // for patching String.prototype in scripts
   },
   "plugins": [
     "import"
