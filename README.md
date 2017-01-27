@@ -23,6 +23,9 @@ Hot module reloading is enabled, so you should see your client refresh when you
 make a code change.
 When using Vagrant, the host port will be 8083.
 
+## Production build
+`npm run build` will create production assets.
+
 ## Production build/server
 `npm run start` will run sanity checks, build the app with webpack with
 production settings, and run an http server on port 4000.

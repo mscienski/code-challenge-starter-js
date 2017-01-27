@@ -32,6 +32,7 @@ const karmaConfig = {
     }
   },
   webpack: extend({}, webpackConfig, {
+    devtool: 'cheap-inline-source-map',
     module: {
       rules: [{
         test: /\.js$/,
@@ -44,6 +45,23 @@ const karmaConfig = {
             failOnError: true,
             failOnWarning: true
           }
+        }]
+      }, {
+        test: /\.json$/,
+        use: [{
+            loader: 'json-loader'
+        }]
+      }, {
+        test: /\.css$/,
+        use: [{
+            loader: 'style-loader'
+        }, {
+            loader: 'css-loader',
+            options: {
+                modules: true,
+                sourceMap: true,
+                localIdentName: '[local]__[hash:base64]'
+            }
         }]
       }]
     },

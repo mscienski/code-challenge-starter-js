@@ -12,4 +12,6 @@ if (module && module.hot) {
 console.log(hello());
 console.log(intersection([1, 2, 5], [2, 5, 78]));
 
-document.querySelector('#root').classList.add(styles.root);
+if (document && document.querySelector('#root')) {
+    document.querySelector('#root').classList.add(styles.root);
+}
