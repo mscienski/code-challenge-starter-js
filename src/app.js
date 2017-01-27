@@ -1,5 +1,5 @@
 import intersection from 'intersection/intersection';
-import styles from './app.css';
+import rootHtml from 'rootHtml';
 
 export default function hello() {
   return 'hello world';
@@ -13,5 +13,5 @@ console.log(hello());
 console.log(intersection([1, 2, 5], [2, 5, 78]));
 
 if (document && document.querySelector('#root')) {
-    document.querySelector('#root').classList.add(styles.root);
+    document.querySelector('#root').innerHTML = rootHtml;
 }
