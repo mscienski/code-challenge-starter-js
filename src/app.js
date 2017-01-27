@@ -1,4 +1,4 @@
-import intersection from 'intersection/intersection';
+import { intersection } from 'intersection';
 import rootHtml from 'rootHtml';
 
 export default function hello() {
