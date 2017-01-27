@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/mscienski/code-challenge-starter-js#readme",
   "scripts": {
+    "build": "scripty",
     "dev": "scripty",
     "lint": "scripty",
     "start": "scripty",

@@ -16,7 +16,7 @@ try {
 }
 
 module.exports = {
-    devtool: 'cheap-inline-source-map',
+    devtool: 'inline-source-map',
     context: path.resolve(__dirname, './src'),
     entry: {
         'app': [
@@ -44,6 +44,18 @@ module.exports = {
             test: /\.json$/,
             use: [{
                 loader: 'json-loader'
+            }]
+        }, {
+            test: /\.css$/,
+            use: [{
+                loader: 'style-loader'
+            }, {
+                loader: 'css-loader',
+                options: {
+                    modules: true,
+                    sourceMap: true,
+                    localIdentName: '[local]__[hash:bash64]'
+                }
             }]
         }]
     },

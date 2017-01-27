@@ -6,6 +6,7 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const host = process.env.host || 'localhost';
 const port = parseInt(process.env.port, 10) + 1;
+const version = require('./package').version;
 
 const babelrc = fs.readFileSync('./.babelrc');
 let babelrcObject = {};
@@ -26,7 +27,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'dist/'),
-        filename: '[name]-[hash].min.js',
+        filename: '[name].' + version + '.min.js',
         publicPath: '/'
     },
     module: {
@@ -43,6 +44,18 @@ module.exports = {
             test: /\.json$/,
             use: [{
                 loader: 'json-loader'
+            }]
+        }, {
+            test: /\.css$/,
+            use: [{
+                loader: 'style-loader'
+            }, {
+                loader: 'css-loader',
+                options: {
+                    modules: true,
+                    sourceMap: true,
+                    localIdentName: '[local]'
+                }
             }]
         }]
     },
