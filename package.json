@@ -27,7 +27,6 @@
     "dev": "scripty",
     "lint": "scripty",
     "start": "scripty",
-    "start:dirty": "scripty",
     "test": "scripty"
   },
   "scripty": {

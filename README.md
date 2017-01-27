@@ -30,3 +30,7 @@ When using Vagrant, the host port will be 8083.
 `npm run start` will run sanity checks, build the app with webpack with
 production settings, and run an http server on port 4000.
 When using Vagrant, the host port will be 8084.
+
+Takes one or two optional flags;
+`--skip-lint` skips linting check
+`--skip-tests` skips Karma
