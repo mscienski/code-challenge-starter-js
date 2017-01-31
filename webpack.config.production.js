@@ -67,13 +67,6 @@ module.exports = {
         ],
         extensions: [ '.json', '.js']
     },
-    devServer: {
-        contentBase: path.join(__dirname, 'dist'),
-        compress: true,
-        port: 3000,
-        hot: true,
-        lazy: false
-    },
     plugins: [
         new HtmlWebpackPlugin({
             template: 'index.html',
