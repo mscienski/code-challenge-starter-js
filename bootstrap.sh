@@ -15,4 +15,5 @@ sudo apt-get install -y git nodejs libfontconfig
 #sudo cp /vagrant ~/code-challenge-starter-js -r
 cd /vagrant
 sudo chown -R `whoami` ./
+rm -rf node_modules
 npm install
